@@ -7,10 +7,16 @@ let message = " ";
 
 let messageEl = document.getElementById("message-el");
 let sumEl = document.querySelector("#sum-el");
-
+let cardsEl = document.querySelector("#cards-el");
 
 function startGame(){
+    renderGame();
+}
 
+
+function renderGame(){
+
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard;
     sumEl.textContent = "Sum: " + sum;
 
 if (sum < 21) {
@@ -24,4 +30,11 @@ if (sum < 21) {
 }
 messageEl.textContent = message;
 
+}
+function newCard(){
+    console.log("Drawing a new card from the deck!")
+    let card = 7;
+   
+    sum += card;
+    startGame();
 }

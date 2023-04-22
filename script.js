@@ -1,8 +1,7 @@
-
 let player = {
-   name: "OLGA",
-   chips: 145
-}
+  name: "OLGA",
+  chips: 145,
+};
 
 let cards = []; //array - ordered list of items
 let sum = 0;
@@ -15,7 +14,7 @@ let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.querySelector("#cards-el");
 
 let playerEl = document.querySelector("#player-el");
-playerEl.textContent = player.name + ": $" + player.chips
+playerEl.textContent = player.name + ": $" + player.chips;
 console.log(cards);
 
 function getRandomCard() {
@@ -47,7 +46,7 @@ function renderGame() {
   for (let i = 0; i < cards.length; i++) {
     cardsEl.textContent += cards[i] + " ";
   }
-sumEl.textContent = "Sum: " + sum
+  sumEl.textContent = "Sum: " + sum;
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -60,11 +59,10 @@ sumEl.textContent = "Sum: " + sum
   messageEl.textContent = message;
 }
 function newCard() {
-  if (isAlife ===true && hasBlackJack === false){
-
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
-  renderGame();
-}
+  if (isAlife === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
